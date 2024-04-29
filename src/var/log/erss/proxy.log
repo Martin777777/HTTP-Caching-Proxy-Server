@@ -1,0 +1,94 @@
+<<<<<<< HEAD
+1: "GET http://baidu.com/ HTTP/1.1" from 76.36.237.167 @ Fri Mar 01 14:34:03 2024
+1: not in cache
+1: Requesting "GET http://baidu.com/ HTTP/1.1" from baidu.com
+1: Received "HTTP/1.1 200 OK" from baidu.com
+1: Responding "HTTP/1.1 200 OK"
+1: cached, expires at Sat Mar  2 14:34:03 2024
+2: "GET http://baidu.com/ HTTP/1.1" from 76.36.237.167 @ Fri Mar 01 14:34:21 2024
+2: in cache, valid
+3: "GET http://example.com/ HTTP/1.1" from 76.36.237.167 @ Fri Mar 01 14:34:31 2024
+3: not in cache
+3: Requesting "GET http://example.com/ HTTP/1.1" from example.com
+3: Received "HTTP/1.1 200 OK" from example.com
+3: Responding "HTTP/1.1 200 OK"
+3: cached, expires at Fri Mar  8 14:34:31 2024
+4: "CONNECT baidu.com:443 HTTP/1.1" from 76.36.237.167 @ Fri Mar 01 14:34:49 2024
+4: Requesting "CONNECT baidu.com:443 HTTP/1.1" from baidu.com
+4: Tunnel closed
+4: Tunnel closed
+1: "CONNECT baidu.com:443 HTTP/1.1" from 76.36.237.167 @ Fri Mar 01 14:41:46 2024
+1: Requesting "CONNECT baidu.com:443 HTTP/1.1" from baidu.com
+1: Responding "HTTP/1.1 200 OK"
+1: Tunnel closed
+1: "CONNECT baidu.com:443 HTTP/1.1" from 98.101.152.14 @ Fri Mar 01 18:12:06 2024
+1: Requesting "CONNECT baidu.com:443 HTTP/1.1" from baidu.com
+1: Responding "HTTP/1.1 200 OK"
+1: Tunnel closed
+2: "CONNECT baidusss.com:443 HTTP/1.1" from 98.101.152.14 @ Fri Mar 01 18:12:13 2024
+1: "GET http://example.com/ HTTP/1.1" from 98.101.152.14 @ Fri Mar 01 19:04:57 2024
+1: not in cache
+1: Requesting "GET http://example.com/ HTTP/1.1" from example.com
+1: Received "HTTP/1.1 200 OK" from example.com
+1: Responding "HTTP/1.1 200 OK"
+1: cached, expires at Fri Mar  8 19:04:57 2024
+2: "GET http://example.com/ HTTP/1.1" from 98.101.152.14 @ Fri Mar 01 19:05:24 2024
+2: in cache, valid
+1: "CONNECT run.mocky.io:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 21:17:05 2024
+1: Requesting "CONNECT run.mocky.io:443 HTTP/1.1" from run.mocky.io
+1: Responding "HTTP/1.1 200 OK"
+1: Tunnel closed
+1: "GET http://example.com/ HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 21:20:36 2024
+1: not in cache
+1: Requesting "GET http://example.com/ HTTP/1.1" from example.com
+1: Received "HTTP/1.1 200 OK" from example.com
+1: Responding "HTTP/1.1 200 OK"
+1: cached, expires at Sat Mar  9 16:20:36 2024
+1: "GET http://example.com/ HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 21:23:03 2024
+1: not in cache
+1: Requesting "GET http://example.com/ HTTP/1.1" from example.com
+1: Received "HTTP/1.1 200 OK" from example.com
+1: Responding "HTTP/1.1 200 OK"
+1: cached, expires at Sat Mar  9 21:23:03 2024
+1: "CONNECT browser.events.data.msn.com:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 22:04:00 2024
+1: Requesting "CONNECT browser.events.data.msn.com:443 HTTP/1.1" from browser.events.data.msn.com
+1: Responding "HTTP/1.1 200 OK"
+1: Tunnel closed
+2: "CONNECT www.bing.com:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 22:04:00 2024
+3: "CONNECT srtb.msn.com:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 22:04:00 2024
+2: Requesting "CONNECT www.bing.com:443 HTTP/1.1" from www.bing.com
+2: Responding "HTTP/1.1 200 OK"
+2: Tunnel closed
+3: Requesting "CONNECT srtb.msn.com:443 HTTP/1.1" from srtb.msn.com
+3: Responding "HTTP/1.1 200 OK"
+3: Tunnel closed
+4: "CONNECT run.mocky.io:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 22:04:01 2024
+5: "CONNECT run.mocky.io:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 22:04:01 2024
+4: Requesting "CONNECT run.mocky.io:443 HTTP/1.1" from run.mocky.io
+4: Responding "HTTP/1.1 200 OK"
+4: Tunnel closed
+5: Requesting "CONNECT run.mocky.io:443 HTTP/1.1" from run.mocky.io
+5: Responding "HTTP/1.1 200 OK"
+5: Tunnel closed
+6: "CONNECT edgeservices.bing.com:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 22:04:06 2024
+6: Requesting "CONNECT edgeservices.bing.com:443 HTTP/1.1" from edgeservices.bing.com
+6: Responding "HTTP/1.1 200 OK"
+6: Tunnel closed
+7: "CONNECT config.extension.grammarly.com:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar  2 22:04:11 2024
+7: Requesting "CONNECT config.extension.grammarly.com:443 HTTP/1.1" from config.extension.grammarly.com
+7: Responding "HTTP/1.1 200 OK"
+7: Tunnel closed
+1: "GET http://example.com/ HTTP/1.1" from 76.36.237.167 @ Sun Mar  3 01:46:16 2024
+1: not in cache
+1: Requesting "GET http://example.com/ HTTP/1.1" from example.com
+1: Received "HTTP/1.1 200 OK" from example.com
+1: Responding "HTTP/1.1 200 OK"
+1: cached, expires at Sun Mar 10 01:46:16 2024
+2: "GET http://httpbin.org/forms/post HTTP/1.1" from 76.36.237.167 @ Sun Mar  3 01:46:27 2024
+2: not in cache
+2: Requesting "GET http://httpbin.org/forms/post HTTP/1.1" from httpbin.org
+2: Received "HTTP/1.1 200 OK" from httpbin.org
+2: Responding "HTTP/1.1 200 OK"
+2: not cacheable because of LACK OF DIRECTIVES
+=======
+>>>>>>> 03e17bff9f157b42237bb869be487d5de86767d1

@@ -1,0 +1,5 @@
+1. In the first version of our Dockerfile, our base image is ubuntu, and we actually think that this is a potential issue, as ubuntu is a big image of a virtual machine, and out proxy is just a C++ application. Therefore, using ubuntu as the base image could be very inefficient and may cause the system to crash if the system is low in performance. Finally we change our base image to gcc:9, which works perfectly fine for our application.
+
+2. When we firstly change our base image to gcc, the image is actually gcc:latest, and there was a danger that the latest version of gcc was not compatible with the tbb library we used. We looked some resources from the Internet, and finally selected gcc:9 as our base image, and it works well.
+
+3. After we find the response from the cache, there was a danger that the cache may be stuck for the next potential put operation as the accessor will be released after the scope ends. We finally solved this by releasing the accessor right after we find the response from the cache.

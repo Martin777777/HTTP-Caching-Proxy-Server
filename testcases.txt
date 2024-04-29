@@ -1,0 +1,114 @@
+
+//GET 
+http://example.com
+
+1: "GET http://example.com/ HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 14:25:40 2024
+1: not in cache
+1: Requesting "GET http://example.com/ HTTP/1.1" from example.com
+1: Received "HTTP/1.1 200 OK" from example.com
+1: Responding "HTTP/1.1 200 OK"
+1: cached, expires at Sat Mar  9 14:25:40 2024
+
+
+2: "GET http://example.com/ HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 15:10:35 2024
+2: in cache, valid
+
+
+4: "GET http://examples.com/ HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 14:29:34 2024
+4: not in cache
+4: Requesting "GET http://examples.com/ HTTP/1.1" from examples.com
+4: Received "HTTP/1.1 301 Moved Permanently" from examples.com
+4: Responding "HTTP/1.1 301 Moved Permanently"
+
+
+5: "GET http://example.com/1 HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 14:30:41 2024
+5: not in cache
+5: Requesting "GET http://example.com/1 HTTP/1.1" from example.com
+5: Received "HTTP/1.1 404 Not Found" from example.com
+5: Responding "HTTP/1.1 404 Not Found"
+
+
+
+//CONNECT
+https://example.com
+
+2: "CONNECT example.com:443 HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 14:27:24 2024
+2: Requesting "CONNECT example.com:443 HTTP/1.1" from example.com
+2: Responding "HTTP/1.1 200 OK"
+2: Tunnel closed
+
+
+
+//POST
+http://example.com
+
+3: "POST http://example.com/ HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 14:27:39 2024
+3: Requesting "POST http://example.com/ HTTP/1.1" from example.com
+3: Received "HTTP/1.1 200 OK" from example.com
+3: Responding "HTTP/1.1 200 OK"
+
+http://httpbin.org/forms/post
+
+20: "POST http://httpbin.org/post HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 15:39:22 2024
+20: Requesting "POST http://httpbin.org/post HTTP/1.1" from httpbin.org
+20: Received "HTTP/1.1 200 OK" from httpbin.org
+20: Responding "HTTP/1.1 200 OK"
+
+
+
+//Expire
+serverhost:8080/expire-in-seconds
+(run server.py in extra_test)
+
+3: Requesting "GET http://vcm-38274.vm.duke.edu:8080/expire-in-seconds HTTP/1.1" from vcm-38274.vm.duke.edu
+3: Received "HTTP/1.1 200 OK" from vcm-38274.vm.duke.edu
+3: Responding "HTTP/1.1 200 OK"
+3: cached, expires at Sat Mar  2 15:18:06 2024
+
+4: "GET http://vcm-38274.vm.duke.edu:8080/expire-in-seconds HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 15:18:38 2024
+4: in cache, but need validation
+4: cached, expires at Sat Mar  2 15:18:48 2024
+
+
+
+//revalidate
+serverhost:8080/need-revalidate
+(run server.py in extra_test)
+
+13: "GET http://vcm-39063.vm.duke.edu:8080/need-revalidate HTTP/1.1" from 76.36.239.153 @ Sat Mar  2 22:23:29 2024
+13: not in cache
+13: Requesting "GET http://vcm-39063.vm.duke.edu:8080/need-revalidate HTTP/1.1" from vcm-39063.vm.duke.edu
+13: Received "HTTP/1.1 200 OK" from vcm-39063.vm.duke.edu
+13: Responding "HTTP/1.1 200 OK"
+13: cached, but requires re-validation
+
+
+
+//Max age = 0
+http://www.artsci.utoronto.ca/futurestudents
+
+40: "GET http://www.artsci.utoronto.ca/futurestudents HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 15:42:17 2024
+40: not in cache
+40: Requesting "GET http://www.artsci.utoronto.ca/futurestudents HTTP/1.1" from www.artsci.utoronto.ca
+40: Received "HTTP/1.1 301 Moved Permanently" from www.artsci.utoronto.ca
+40: Responding "HTTP/1.1 301 Moved Permanently"
+
+
+//Chuncked Data 
+http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+
+41: "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from 76.36.237.167 @ Sat Mar 02 15:52:03 2024
+41: not in cache
+41: Requesting "GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1" from www.httpwatch.com
+41: Received "HTTP/1.1 200 OK" from www.httpwatch.com
+41: Responding "HTTP/1.1 200 OK"
+41: not cacheable because the response is not allowed to be stored
+
+
+//test 502
+https://run.mocky.io/v3/0bec3d15-1b69-49d2-8acb-587e4d75f78a
+ 
+//test 400
+https://run.mocky.io/v3/94ee0f7a-b45d-454f-89e4-8e6b0f72a38f
+
+
